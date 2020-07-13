@@ -24,5 +24,5 @@ At any time you should ensure that your repo has the following top level directo
     ##### python src/server.py
 
 3. To run the tests:
-    #### python tests/<name>.py
+    #### python tests/{test_name}.py
 
