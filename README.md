@@ -18,11 +18,11 @@ At any time you should ensure that your repo has the following top level directo
 
 ### Build
 1. To install the dependancies run:
-##### python setup.py develop
+    ##### python setup.py develop
 
 2. To run the server:
-##### python src/server.py
+    ##### python src/server.py
 
 3. To run the tests:
-#### python tests/<name>.py
+    #### python tests/<name>.py
 
