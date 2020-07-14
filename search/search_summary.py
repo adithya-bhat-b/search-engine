@@ -207,9 +207,27 @@ class Search:
         Returns:
             Ex: [7, 5, 11, 23,..]
         """
-        query_splits = self.query.split(" ")
+        query_splits = self._remove_empty_str(self.query)
         return [self._get_query_match_score(summary[self.SUMMARY_KEY], query_splits)
                 for summary in self.INPUT_DATA[self.SUMMARIES_KEY]]
+
+    @staticmethod
+    def _remove_empty_str(string):
+        """
+        Remove the empty strings in a splitted array
+        Args:
+            string: string input
+        Returns:
+            string_splits: array of words in the string without empty strings
+        Ex:
+            string = "  hai hello"
+            string_splits = ["hai", "hello"]
+        """ 
+        string_splits = string.split(" ")
+        empty_str = ""
+        while empty_str in string_splits:
+            string_splits.remove(empty_str)
+        return string_splits
 
     @staticmethod
     def _get_query_match_score(summary: str, query_splits: list) -> int:
